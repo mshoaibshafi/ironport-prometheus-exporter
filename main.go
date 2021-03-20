@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"github.com/prometheus/client_golang/prometheus"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"log"
 	"net/http"
 	"net/url"
@@ -34,6 +35,7 @@ func main() {
 	}
 	prometheus.MustRegister(exporter)
 
-	http.Handle(*metricsPath, prometheus.Handler())
+	//http.Handle(*metricsPath, prometheus.Handler())
+	http.Handle(*metricsPath, promhttp.Handler())
 	log.Fatal(http.ListenAndServe(*listenAddress, nil))
 }
