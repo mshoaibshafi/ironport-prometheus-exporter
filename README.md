@@ -5,7 +5,7 @@ A Cisco IronPort exporter for Prometheus. Production ready.
 Download and install:
 
 ```
-go get github.com/1player/ironport-prometheus-exporter
+go get github.com/mshoaibshafi/ironport-prometheus-exporter
 ```
 
 Run the exporter:
